@@ -1,6 +1,5 @@
-#importing the time module
 import time
-
+import random
 def play():
     print ("Start guessing...")
     time.sleep(0.5)
