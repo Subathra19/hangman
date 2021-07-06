@@ -1,11 +1,34 @@
+#importing the time module
 import time
 import random
+# import json
+import pandas
+
 def play():
     print ("Start guessing...")
     time.sleep(0.5)
-    wordbank = ["avocado", "chicken", "funds", "bankrupt", "cushion", "filming", "apartment", "radio", "detective", "vinegar", "curtains", "carpet", "addictive", "control", "raining", "sunshine", "diamond", "charcoal", "chocolate", "container", "cubes", "fan", "processor", "sunbed", "towel", "jellyfish", "meals"]
+    # 1. Set a word manually 
+    #   word = "Python"
+
+    # 2. Create a list of words choose one word randomly
+    #   wordbank = ["avocado", "chicken", "funds", "bankrupt", "cushion", "filming", "apartment", "radio", "detective", "vinegar", "curtains", "carpet", "addictive", "control", "raining", "sunshine", "diamond", "charcoal", "chocolate", "container", "cubes", "fan", "processor", "sunbed", "towel", "jellyfish", "meals"]
+    #   word=random.choice(wordbank)
+
+    # 3. Create a list of words using a json file and choose one word randomly
+    #   import json
+    #   wordbank=json.load(open("word-bank.json"))
+    #   word=random.choice(wordbank)
+      
+    # 4. Create a list of words using a json file and choose one word randomly
+    data=pandas.read_csv("word.txt")
+    # Words is the column name 
+    wordbank = list(data["Words"])
     word=random.choice(wordbank)
 
+    #Set a word to guess
+    #word = "secret"
+
+    #creates an variable with an empty value
     guesses = ''
 
     #determine the number of turns
